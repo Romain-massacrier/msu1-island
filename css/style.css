@@ -670,6 +670,11 @@ h3 {
   padding-left: 20px;
 }
 
+.video-list {
+  display: grid;
+  gap: 22px;
+}
+
 .video-player {
   overflow: hidden;
   aspect-ratio: 16 / 9;

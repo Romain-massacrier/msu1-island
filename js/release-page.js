@@ -36,6 +36,50 @@ function getYoutubeEmbedUrl(url) {
   return "";
 }
 
+function getYoutubeUrls(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  return value ? [value] : [];
+}
+
+function createYoutubePlayer(url, index) {
+  const embedUrl = getYoutubeEmbedUrl(url);
+
+  if (!embedUrl) {
+    return null;
+  }
+
+  const item = document.createElement("div");
+  const player = document.createElement("div");
+  const frame = document.createElement("iframe");
+  const actions = document.createElement("div");
+  const link = document.createElement("a");
+
+  item.className = "video-item";
+  player.className = "video-player";
+  actions.className = "video-actions";
+  link.className = "button button-youtube";
+
+  frame.src = embedUrl;
+  frame.title = `${release.title} - vidéo ${index + 1}`;
+  frame.referrerPolicy = "strict-origin-when-cross-origin";
+  frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  frame.allowFullscreen = true;
+
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = "Ouvrir sur YouTube";
+
+  player.append(frame);
+  actions.append(link);
+  item.append(player, actions);
+
+  return item;
+}
+
 if (release) {
   document.title = release.title;
   document.querySelector("[data-release-title]").textContent = release.title;
@@ -60,16 +104,13 @@ if (release) {
   infoGrid.replaceChildren(...infoItems);
 
   const videoSection = document.querySelector("[data-release-video-section]");
-  const videoFrame = document.querySelector("[data-release-youtube]");
-  const videoLink = document.querySelector("[data-release-youtube-link]");
-  const youtubeEmbedUrl = getYoutubeEmbedUrl(release.youtube);
+  const videoList = document.querySelector("[data-release-youtube-list]");
+  const youtubePlayers = getYoutubeUrls(release.youtube)
+    .map((url, index) => createYoutubePlayer(url, index))
+    .filter(Boolean);
 
-  if (videoSection && videoFrame && youtubeEmbedUrl) {
-    videoFrame.src = youtubeEmbedUrl;
-    videoFrame.title = `Vidéo YouTube - ${release.title}`;
-    if (videoLink) {
-      videoLink.href = release.youtube;
-    }
+  if (videoSection && videoList && youtubePlayers.length) {
+    videoList.replaceChildren(...youtubePlayers);
     videoSection.hidden = false;
   }
 }

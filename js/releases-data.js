@@ -20,7 +20,7 @@ const releases = [
       ["Développeur", "TOSE"]
     ],
     msuContribution: "Ce pack MSU-1 cherche à renforcer l’ambiance Dragon Ball Z avec des musiques PCM plus proches de l’anime et des films. L’idée est de garder l’esprit du jeu Super Nintendo, tout en donnant plus d’impact aux combats et aux moments importants.",
-    youtube: "#",
+    youtube: "https://youtu.be/61BmWxn_fm0?si=JaMFOqjfCQvEdnDe",
     drive: "https://drive.google.com/drive/folders/1cpJzZc-oveM9zQQPiCYYWwCNJE5VP5IX?usp=drive_link"
   },
   {
@@ -68,7 +68,10 @@ const releases = [
       ["Développeur", "Ocean Software"]
     ],
     msuContribution: "Le pack MSU-1 cherche à renforcer l’ambiance Jurassic Park avec des musiques PCM plus proches de l’esprit du film. L’objectif est d’apporter plus de tension pendant l’exploration et de mieux coller à l’ambiance cinéma, sans transformer le jeu en autre chose.",
-    youtube: "#",
+    youtube: [
+      "https://youtu.be/RjrEc4bKeS0",
+      "https://www.youtube.com/watch?v=59CMByLWF5Y"
+    ],
     drive: "https://drive.google.com/drive/folders/1cpJzZc-oveM9zQQPiCYYWwCNJE5VP5IX?usp=drive_link"
   }
 ];
