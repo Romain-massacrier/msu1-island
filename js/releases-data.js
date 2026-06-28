@@ -19,7 +19,7 @@ const releases = [
       ["Éditeur", "Bandai"],
       ["Développeur", "TOSE"]
     ],
-    msuContribution: "Ce pack MSU-1 cherche à renforcer l’ambiance Dragon Ball Z avec des musiques PCM plus proches de l’anime et des films. L’idée est de garder l’esprit du jeu Super Nintendo, tout en donnant plus d’impact aux combats et aux moments importants.",
+    msuContribution: "Ce pack MSU-1 essaie de retrouver davantage l’ambiance de l’anime et des films Dragon Ball Z. Les musiques PCM donnent plus de poids aux combats et aux moments clés, tout en gardant le charme de la version Super Nintendo.",
     youtube: [
       "https://youtu.be/61BmWxn_fm0?si=JaMFOqjfCQvEdnDe"
     ],
@@ -45,7 +45,7 @@ const releases = [
       ["Éditeur", "Bandai"],
       ["Développeur", "TOSE"]
     ],
-    msuContribution: "Le pack MSU-1 apporte une bande-son PCM pensée pour donner plus d’énergie aux combats. Le choix des musiques cherche à rester fidèle à l’ambiance Dragon Ball Z, avec un rendu plus proche de l’anime tout en conservant le côté jeu de combat Super Nintendo.",
+    msuContribution: "Ce pack MSU-1 essaie de retrouver davantage l’énergie de l’anime Dragon Ball Z. Les musiques PCM accompagnent mieux les combats et donnent plus de rythme au jeu, sans casser l’esprit de la version Super Nintendo.",
     youtube: [
       "https://youtu.be/xfRbPvKDld8?si=Mj1bdYx07zBqdUZx"
     ],
@@ -71,7 +71,7 @@ const releases = [
       ["Éditeur", "Ocean Software"],
       ["Développeur", "Ocean Software"]
     ],
-    msuContribution: "Le pack MSU-1 cherche à renforcer l’ambiance Jurassic Park avec des musiques PCM plus proches de l’esprit du film. L’objectif est d’apporter plus de tension pendant l’exploration et de mieux coller à l’ambiance cinéma, sans transformer le jeu en autre chose.",
+    msuContribution: "Ce pack MSU-1 essaie de retrouver davantage l’ambiance du film Jurassic Park. Les musiques PCM donnent plus de présence aux phases d’exploration et renforcent le côté aventure, sans enlever le charme du jeu Super Nintendo.",
     youtube: [
       "https://youtu.be/RjrEc4bKeS0",
       "https://www.youtube.com/watch?v=59CMByLWF5Y"

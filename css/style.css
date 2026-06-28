@@ -690,13 +690,6 @@ h3 {
   border: 0;
 }
 
-.video-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
-}
-
 .msu-page {
   width: min(980px, calc(100% - 32px));
   margin: 0 auto;

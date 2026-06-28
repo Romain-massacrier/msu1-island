@@ -54,13 +54,9 @@ function createYoutubePlayer(url, index) {
   const item = document.createElement("div");
   const player = document.createElement("div");
   const frame = document.createElement("iframe");
-  const actions = document.createElement("div");
-  const link = document.createElement("a");
 
   item.className = "video-item";
   player.className = "video-player";
-  actions.className = "video-actions";
-  link.className = "button button-youtube";
 
   frame.src = embedUrl;
   frame.title = `${release.title} - vidéo ${index + 1}`;
@@ -68,14 +64,8 @@ function createYoutubePlayer(url, index) {
   frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
   frame.allowFullscreen = true;
 
-  link.href = url;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.textContent = "Ouvrir sur YouTube";
-
   player.append(frame);
-  actions.append(link);
-  item.append(player, actions);
+  item.append(player);
 
   return item;
 }
