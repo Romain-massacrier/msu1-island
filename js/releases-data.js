@@ -20,7 +20,9 @@ const releases = [
       ["Développeur", "TOSE"]
     ],
     msuContribution: "Ce pack MSU-1 cherche à renforcer l’ambiance Dragon Ball Z avec des musiques PCM plus proches de l’anime et des films. L’idée est de garder l’esprit du jeu Super Nintendo, tout en donnant plus d’impact aux combats et aux moments importants.",
-    youtube: "https://youtu.be/61BmWxn_fm0?si=JaMFOqjfCQvEdnDe",
+    youtube: [
+      "https://youtu.be/61BmWxn_fm0?si=JaMFOqjfCQvEdnDe"
+    ],
     drive: "https://drive.google.com/drive/folders/1cpJzZc-oveM9zQQPiCYYWwCNJE5VP5IX?usp=drive_link"
   },
   {
@@ -44,7 +46,9 @@ const releases = [
       ["Développeur", "TOSE"]
     ],
     msuContribution: "Le pack MSU-1 apporte une bande-son PCM pensée pour donner plus d’énergie aux combats. Le choix des musiques cherche à rester fidèle à l’ambiance Dragon Ball Z, avec un rendu plus proche de l’anime tout en conservant le côté jeu de combat Super Nintendo.",
-    youtube: "https://youtu.be/xfRbPvKDld8?si=Mj1bdYx07zBqdUZx",
+    youtube: [
+      "https://youtu.be/xfRbPvKDld8?si=Mj1bdYx07zBqdUZx"
+    ],
     drive: "https://drive.google.com/drive/folders/1cpJzZc-oveM9zQQPiCYYWwCNJE5VP5IX?usp=drive_link"
   },
   {
