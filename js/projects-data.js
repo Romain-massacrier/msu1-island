@@ -318,6 +318,7 @@ const projects = [
         paragraphs: ["Développement : PSn00bSDK. Il s’agit d’un vrai projet destiné à la première PlayStation ; la partie technique reste volontairement secondaire sur cette fiche."]
       }
     ],
+    youtube: ["https://www.youtube.com/watch?v=81bgXIERmBQ"],
     availabilityMessage: "Warhammer 40,000: The Third Eye est actuellement en cours de développement. Cette page sera mise à jour au fur et à mesure de l’avancement du projet."
   }
 ];
