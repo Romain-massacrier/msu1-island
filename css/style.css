@@ -29,6 +29,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -149,6 +153,15 @@ p {
   outline: none;
 }
 
+.affiliate-nav {
+  padding-left: 18px;
+  border-left: 1px solid rgba(216, 216, 210, 0.24);
+}
+
+.nav-links .affiliate-nav a {
+  color: var(--snes-lavender);
+}
+
 .nav-toggle {
   display: none;
   width: 42px;
@@ -236,6 +249,14 @@ h3 {
 
 .hero-intro p + p {
   margin-top: 16px;
+}
+
+.hero-kicker {
+  margin-bottom: 22px !important;
+  color: var(--snes-lavender) !important;
+  font-size: 0.96rem !important;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
 .hero-note {
@@ -335,14 +356,17 @@ h3 {
   margin-top: 12px;
 }
 
-.release-grid {
+.project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
-.release-card {
+.project-card {
   overflow: hidden;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
   border: 2px solid rgba(216, 216, 210, 0.28);
   border-top-color: rgba(216, 216, 210, 0.75);
   border-radius: 12px;
@@ -355,7 +379,7 @@ h3 {
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.release-card:hover {
+.project-card:hover {
   transform: translateY(-4px);
   border-color: var(--snes-lavender);
   box-shadow:
@@ -363,7 +387,8 @@ h3 {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.release-thumbnail {
+.project-thumbnail {
+  position: relative;
   display: block;
   aspect-ratio: 16 / 9;
   overflow: hidden;
@@ -372,7 +397,7 @@ h3 {
   background: #17171d;
 }
 
-.release-thumbnail img {
+.project-thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -380,30 +405,98 @@ h3 {
   transition: filter 0.25s ease;
 }
 
-.release-thumbnail:hover img,
-.release-thumbnail:focus-visible img {
+.project-thumbnail:hover img,
+.project-thumbnail:focus-visible img {
   filter: brightness(1.08);
 }
 
-.release-thumbnail:focus-visible {
+.project-thumbnail:focus-visible {
   outline: 3px solid var(--snes-lavender);
   outline-offset: -3px;
 }
 
-.release-body {
+.project-thumbnail.is-placeholder,
+.detail-media.is-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(107, 92, 165, 0.25), rgba(21, 21, 26, 0.9)),
+    repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 255, 255, 0.025) 12px 24px);
+}
+
+.project-thumbnail.is-placeholder::after,
+.detail-media.is-placeholder::after {
+  content: attr(data-placeholder);
+  color: var(--console-light);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.detail-media.is-placeholder::after {
+  font-size: 1.05rem;
+}
+
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 16px;
 }
 
-.release-body h3 {
+.project-body h3 {
   color: var(--text-light);
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
 }
 
+.project-card-meta {
+  display: grid;
+  gap: 2px;
+  margin: 10px 0 12px;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.project-card-meta span:nth-child(2) {
+  color: var(--console-light);
+  font-weight: 750;
+}
+
+.project-card-status {
+  color: var(--snes-lavender) !important;
+  font-weight: 850;
+}
+
 .description {
-  min-height: 62px;
-  margin: 0;
+  margin: 0 0 16px;
   color: var(--text-muted);
   font-size: 0.94rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 8px;
+  border: 1px solid rgba(154, 143, 209, 0.48);
+  border-radius: 3px;
+  color: var(--console-light);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.2;
+  background: rgba(107, 92, 165, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .card-actions {
@@ -542,6 +635,18 @@ h3 {
   margin: 0;
 }
 
+.site-footer a {
+  color: var(--snes-lavender);
+  font-weight: 800;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--text-light);
+  outline: none;
+  text-decoration: underline;
+}
+
 .detail-page {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
@@ -611,6 +716,25 @@ h3 {
   font-weight: 850;
 }
 
+.detail-status {
+  margin: -10px 0 18px;
+  color: var(--snes-lavender) !important;
+  font-weight: 850;
+}
+
+.detail-content .project-tags {
+  margin-top: 18px;
+}
+
+.project-credit {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border-left: 4px solid var(--snes-lavender);
+  color: var(--text-light) !important;
+  font-weight: 850;
+  background: rgba(107, 92, 165, 0.16);
+}
+
 .detail-actions {
   display: flex;
   flex-wrap: wrap;
@@ -618,7 +742,13 @@ h3 {
   margin-top: 24px;
 }
 
-.release-section {
+.availability-note {
+  margin-top: 18px !important;
+  color: var(--console-light) !important;
+  font-weight: 750;
+}
+
+.project-section {
   margin-top: 32px;
   padding: 28px;
   background: rgba(28, 27, 34, 0.88);
@@ -627,47 +757,121 @@ h3 {
   border-radius: 12px;
 }
 
-.release-section h2 {
+.project-section h2 {
   margin-bottom: 18px;
 }
 
-.release-info-grid {
+.project-info-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
 
-.release-info-grid div {
+.project-info-grid div {
   padding: 16px;
   background: rgba(0, 0, 0, 0.22);
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 10px;
 }
 
-.release-info-grid span {
+.project-info-grid span {
   display: block;
   margin-bottom: 6px;
   color: var(--text-muted);
   font-size: 0.85rem;
 }
 
-.release-info-grid strong {
+.project-info-grid strong {
   color: var(--text-light);
 }
 
-.release-section p,
-.release-section li {
+.project-section p,
+.project-section li {
   color: var(--text-muted);
   line-height: 1.7;
 }
 
-.release-section p {
+.project-section p {
   margin: 0;
 }
 
-.release-section ul {
+.project-section p + p {
+  margin-top: 12px;
+}
+
+.project-section ul {
   margin: 0;
   padding-left: 20px;
+}
+
+.project-subsection {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(216, 216, 210, 0.14);
+}
+
+.project-subsection h3 {
+  margin-bottom: 10px;
+  color: var(--text-light);
+  font-size: 1.08rem;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.project-gallery figure {
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: #17171d;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.project-gallery figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 8px 10px;
+  color: var(--text-light);
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.project-gallery .is-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.project-gallery .is-placeholder::after {
+  content: attr(data-placeholder);
+  color: var(--text-muted);
+  font-weight: 750;
+  text-align: center;
+}
+
+.project-error {
+  padding: 28px;
+  border: 2px solid rgba(216, 216, 210, 0.28);
+  border-radius: 12px;
+  background: rgba(28, 27, 34, 0.88);
+}
+
+.project-error a {
+  color: var(--snes-lavender);
+  font-weight: 800;
 }
 
 .rom-check {
@@ -764,6 +968,10 @@ h3 {
   line-height: 1.75;
 }
 
+.msu-intro p + p {
+  margin-top: 14px;
+}
+
 .msu-section {
   margin-top: 34px;
   padding-top: 26px;
@@ -789,7 +997,7 @@ h3 {
     padding: 86px 0 58px;
   }
 
-  .release-grid {
+  .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -799,7 +1007,7 @@ h3 {
 }
 
 @media (max-width: 900px) {
-  .release-info-grid {
+  .project-info-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -849,19 +1057,15 @@ h3 {
     display: flex;
   }
 
-  .nav-links.detail-nav {
-    position: static;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    border: 0;
-    background: transparent;
-  }
-
   .nav-links a {
     display: block;
     width: 100%;
+  }
+
+  .affiliate-nav {
+    padding: 12px 0 0;
+    border-top: 1px solid rgba(216, 216, 210, 0.18);
+    border-left: 0;
   }
 }
 
@@ -881,7 +1085,7 @@ h3 {
     padding: 34px 0;
   }
 
-  .release-grid {
+  .project-grid {
     grid-template-columns: 1fr;
   }
 
@@ -889,13 +1093,14 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .description {
-    min-height: auto;
-  }
 }
 
 @media (max-width: 560px) {
-  .release-info-grid {
+  .project-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery {
     grid-template-columns: 1fr;
   }
 }
